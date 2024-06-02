@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listing</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="build/jquery/jquery.vibrate.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="job-info">
+        <div class="header">
+            <div>
+                <div class="date">
+                    <span>Сегодня 8:00</span>
+                </div>
+                <div class="urgent">
+                    <span class="urgent">срочно</span>
+                </div>
+            </div>
+        </div>
+        <div class="job-details">
+            <span class="salary">2400₽ / 8ч</span>
+            <span class="hourly-rate">~300₽/ч</span>
+            <p class="job-description">Работа с бензопилой, пилить кусты ветки</p>
+            <a href="#" class="details-link">Посмотреть подробности</a>
+            <div class="location">
+                <span>Гагарина д.9</span>
+            </div>
+        </div>
+        <button class="go-button">ЕДУ!</button>
+    </div>
+    <div class="navigation">
+        <button class="nav-button left">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+            </svg>
+        </button>
+        <button class="nav-button right">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
+            </svg>
+        </button>
+    </div>
+    <div class="filters">
+        <div class="worker-count-button" id="worker-count-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z"/>
+            </svg>
+            <p id="worker-count">3</p>
+        </div>
+        <div class="rate-control">
+            <button class="rate-button rb-left" id="rate-decrease">-</button>
+            <div class="rate-amount">
+                <svg viewBox="0 0 493 384" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M0 0H492.5V384H0V0ZM6.5 112C41.8 112 70.5 83.3 70.5 48H422.5C422.5 83.3 451.2 112 486.5 112V272C451.2 272 422.5 300.7 422.5 336H70.5C70.5 300.7 41.8 272 6.5 272V112Z"
+                    />
+                </svg>
+                <p id="rate-amount">300₽</p>
+            </div>
+            <button class="rate-button rb-right" id="rate-increase">+</button>
+        </div>
+        <div class="urgent-switch">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z"/>
+            </svg>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById("worker-count-button").addEventListener("click", function () {
+        let countElement = document.getElementById("worker-count");
+        let count = parseInt(countElement.textContent);
+        count = (count % 5) + 1;  // Cycles through 1 to 5
+        $("#worker-count-button").vibrate()
+        countElement.textContent = count;
+    });
+
+    document.getElementById("rate-decrease").addEventListener("click", function () {
+        let amountElement = document.getElementById("rate-amount");
+        let amount = parseInt(amountElement.textContent.replace('₽', ''));
+        if (amount > 200) amount -= 50;  // Decrease by 50 but not below 0
+        $("#rate-decrease").vibrate()
+        amountElement.textContent = amount + '₽';
+    });
+
+    document.getElementById("rate-increase").addEventListener("click", function () {
+        let amountElement = document.getElementById("rate-amount");
+        let amount = parseInt(amountElement.textContent.replace('₽', ''));
+        if (amount < 900) amount += 50;  // Increase by 50
+        $("#rate-increase").vibrate()
+        amountElement.textContent = amount + '₽';
+    });
+</script>
+</body>
+</html>

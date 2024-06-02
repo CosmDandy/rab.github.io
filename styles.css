@@ -1,0 +1,203 @@
+/* ---------- */
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 700px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    /*background-image: url("design/masters/123.png");*/
+    background-image: url("design/reference/test.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+button {
+    border: none; /* Убираем границу */
+    outline: none; /* Убираем обводку при фокусе */
+    background: none; /* Убираем фон */
+    cursor: pointer; /* Добавляем указатель */
+}
+
+.container {
+    width: 90%;
+    height: 95%;
+    border-radius: 1em;
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.job-info {
+    width: 100%;
+    height: 63%;
+    background-color: rgba(53, 53, 53, 0.7);
+    border-radius: 1em;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: 18%;
+    background-color: aqua;
+    border-radius: 1em;
+
+}
+
+.job-details {
+    width: 100%;
+    height: 60%;
+    background-color: aqua;
+    border-radius: 1em;
+
+
+}
+
+.go-button {
+    width: 100%;
+    height: 15%;
+    background-color: #F66A1C;
+    border-radius: 1em;
+}
+
+.navigation {
+    width: 100%;
+    height: 20%;
+    border-radius: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-button {
+    width: 45%;
+    height: 100%;
+    background-color: rgba(53, 53, 53, 0.7);
+    border-radius: 1em;
+}
+
+.nav-button svg {
+    height: 80%;
+    width: 80%;
+    fill: #F66A1C;
+}
+
+.filters {
+    width: 100%;
+    height: 10%;
+    background-color: rgba(53, 53, 53, 0.7);
+    border-radius: 1em;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.worker-count-button {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.worker-count-button svg {
+    height: 100%;
+    width: 100%;
+    fill: #F66A1C;
+    position: absolute;
+}
+
+.worker-count-button p {
+    position: sticky;
+    color: white;
+    font-size: 2.5em;
+    margin: 15px auto;
+    z-index: 2;
+    text-align: center;
+}
+
+.urgent-switch svg {
+    padding: 7px;
+    height: 80%;
+    width: 80%;
+    fill: white;
+}
+
+.rate-control {
+    height: 100%;
+    width: 50%;
+    border-radius: 1em;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rate-amount {
+    height: 100%;
+    width: 70%;
+    position: relative;
+}
+
+.rate-amount svg {
+    height: 100%;
+    width: 100%;
+    fill: #F66A1C;
+    position: absolute;
+}
+
+.rate-amount p {
+    color: white;
+    position: sticky;
+    font-size: 2.5em;
+    margin: 15px auto;
+    z-index: 2;
+    text-align: center;
+}
+
+.rate-button {
+    height: 100%;
+    width: 30px;
+    font-size: 2em;
+    color: #ffffff;
+    background-color: #F66A1C;
+}
+
+.rb-left {
+    border-radius: 15px 0 0 15px;
+}
+
+.rb-right {
+    border-radius: 0 15px 15px 0;
+}
+
+.urgent-switch {
+    height: 75px;
+    width: 75px;
+    background-color: #F66A1C;
+    border-radius: 50%;
+}
