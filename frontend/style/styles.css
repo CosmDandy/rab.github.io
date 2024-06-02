@@ -22,7 +22,7 @@ body {
     height: 100vh;
     width: 100%;
     /*background-image: url("design/masters/123.png");*/
-    background-image: url("design/reference/test.png");
+    background-image: url("../../design/reference/test.png");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
