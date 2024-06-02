@@ -1,4 +1,11 @@
-/* ---------- */
+* {
+    touch-action: none; /* масштабирование при двойном тапе не происходит */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+}
 
 html, body {
     box-sizing: border-box;
