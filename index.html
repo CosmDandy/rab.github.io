@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Listing</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="build/jquery/jquery.vibrate.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -77,15 +75,18 @@
         let countElement = document.getElementById("worker-count");
         let count = parseInt(countElement.textContent);
         count = (count % 5) + 1;  // Cycles through 1 to 5
-        $("#worker-count-button").vibrate()
         countElement.textContent = count;
     });
+
+    document.getElementById("worker-count-button").addEventListener("click", function () {
+        window.navigator.vibrate(100);
+    });
+
 
     document.getElementById("rate-decrease").addEventListener("click", function () {
         let amountElement = document.getElementById("rate-amount");
         let amount = parseInt(amountElement.textContent.replace('₽', ''));
         if (amount > 200) amount -= 50;  // Decrease by 50 but not below 0
-        $("#rate-decrease").vibrate()
         amountElement.textContent = amount + '₽';
     });
 
@@ -93,7 +94,6 @@
         let amountElement = document.getElementById("rate-amount");
         let amount = parseInt(amountElement.textContent.replace('₽', ''));
         if (amount < 900) amount += 50;  // Increase by 50
-        $("#rate-increase").vibrate()
         amountElement.textContent = amount + '₽';
     });
 </script>
