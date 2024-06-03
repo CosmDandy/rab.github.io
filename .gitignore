@@ -676,3 +676,4 @@ cython_debug/
 
 design/
 backend/database
+docker-compose.yml
