@@ -7,7 +7,7 @@
 
 }
 
-html, body {
+html, body, a, p {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -39,7 +39,7 @@ button {
     width: 90%;
     height: 95%;
     border-radius: 1em;
-    margin: 1em;
+    margin: 1em 1em 2em;
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -64,9 +64,47 @@ button {
 .header {
     width: 100%;
     height: 18%;
-    background-color: aqua;
     border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
+.task_date_type {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.task_date {
+    width: 100%;
+    height: 3.5em;
+    background-color: #4c4c4c;
+    border-radius: 2em;
+    text-align: center;
+}
+
+.task_date p {
+    font-size: 2em;
+    color: white;
+}
+
+.task_type {
+    width: 80%;
+    height: 2em;
+    background-color: #F66A1C;
+    border-radius: 0 0 2em 2em;
+    text-align: center;
+}
+
+.task_type p {
+    font-size: 1.5em;
+    color: white;
 }
 
 .job-details {
@@ -74,8 +112,11 @@ button {
     height: 60%;
     background-color: aqua;
     border-radius: 1em;
-
-
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .go-button {
@@ -124,10 +165,18 @@ button {
 }
 
 .worker-count-button {
-    height: 75px;
-    width: 75px;
+    height: 4em;
+    width: 4em;
     border-radius: 50%;
     position: relative;
+    margin: 0.5em;
+}
+
+.worker-count-data {
+    /*background-color: #427070;*/
+    height: 4em;
+    width: 4em;
+    margin: 0.5em;
 }
 
 .worker-count-button svg {
@@ -146,6 +195,15 @@ button {
     text-align: center;
 }
 
+.urgent-switch {
+    height: 4em;
+    width: 4em;
+    border-radius: 50%;
+    position: relative;
+    margin: 0.5em;
+    background-color: #F66A1C;
+}
+
 .urgent-switch svg {
     padding: 7px;
     height: 80%;
@@ -155,13 +213,14 @@ button {
 
 .rate-control {
     height: 100%;
-    width: 50%;
+    width: 40%;
     border-radius: 1em;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    margin: 0.5em;
 }
 
 .rate-amount {
@@ -180,8 +239,8 @@ button {
 .rate-amount p {
     color: white;
     position: sticky;
-    font-size: 2.5em;
-    margin: 15px auto;
+    font-size: 2em;
+    margin: 0.5em auto;
     z-index: 2;
     text-align: center;
 }
@@ -200,11 +259,4 @@ button {
 
 .rb-right {
     border-radius: 0 15px 15px 0;
-}
-
-.urgent-switch {
-    height: 75px;
-    width: 75px;
-    background-color: #F66A1C;
-    border-radius: 50%;
 }

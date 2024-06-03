@@ -10,12 +10,20 @@
 <div class="container">
     <div class="job-info">
         <div class="header">
-            <div>
-                <div class="date">
-                    <span>Сегодня 8:00</span>
+            <div class="task_date_type">
+                    <div class="task_date">
+                        <p>Сегодня 8:00</p>
+                    </div>
+                    <div class="task_type">
+                        <p>Срочно</p>
+                    </div>
                 </div>
-                <div class="urgent">
-                    <span class="urgent">срочно</span>
+            <div>
+                <div class="worker-count-button worker-count-data">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z"/>
+                    </svg>
+                    <p>3</p>
                 </div>
             </div>
         </div>
@@ -54,11 +62,11 @@
         <div class="rate-control">
             <button class="rate-button rb-left" id="rate-decrease">-</button>
             <div class="rate-amount">
-                <svg viewBox="0 0 493 384" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M0 0H492.5V384H0V0ZM6.5 112C41.8 112 70.5 83.3 70.5 48H422.5C422.5 83.3 451.2 112 486.5 112V272C451.2 272 422.5 300.7 422.5 336H70.5C70.5 300.7 41.8 272 6.5 272V112Z"
-                    />
-                </svg>
+                <!--                <svg viewBox="0 0 493 384" xmlns="http://www.w3.org/2000/svg">-->
+                <!--                    <path fill-rule="evenodd" clip-rule="evenodd"-->
+                <!--                          d="M0 0H492.5V384H0V0ZM6.5 112C41.8 112 70.5 83.3 70.5 48H422.5C422.5 83.3 451.2 112 486.5 112V272C451.2 272 422.5 300.7 422.5 336H70.5C70.5 300.7 41.8 272 6.5 272V112Z"-->
+                <!--                    />-->
+                <!--                </svg>-->
                 <p id="rate-amount">300₽</p>
             </div>
             <button class="rate-button rb-right" id="rate-increase">+</button>
