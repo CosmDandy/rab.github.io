@@ -11,7 +11,6 @@ user_init_roles_inline_kb = InlineKeyboardMarkup(
     resize_keyboard=True
 )
 
-
 user_switch_roles_data = ['user_switch_roles_1', 'user_switch_roles_0']
 user_switch_roles_inline_kb = InlineKeyboardMarkup(
     inline_keyboard=[
@@ -28,6 +27,9 @@ open_stock_inline_kb = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(text='Открыть биржу', web_app=WebAppInfo(
                 url='https://cosmdandy.github.io/rab.github.io/frontend/index.html'))
+        ],
+        [
+            InlineKeyboardButton(text='Подписаться на канал', url='https://t.me/go_4work')
         ]
     ],
     resize_keyboard=True

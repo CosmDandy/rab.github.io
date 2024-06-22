@@ -37,8 +37,3 @@ async def switch_role_handler(message: Message) -> None:
 async def new_task(message: Message) -> None:
     # TODO document why this method is empty
     pass
-
-
-@router.message(Command('stock'))
-async def open_stock_handler(message: Message) -> None:
-    await message.answer(text='Please choose your role:', reply_markup=open_stock_inline_kb)
