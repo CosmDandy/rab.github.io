@@ -195,16 +195,16 @@ button {
     text-align: center;
 }
 
-.urgent-switch {
+.urgent-switch-button {
     height: 4em;
     width: 4em;
     border-radius: 50%;
     position: relative;
     margin: 0.5em;
-    background-color: #F66A1C;
+    box-sizing: border-box;
 }
 
-.urgent-switch svg {
+.urgent-switch-button svg {
     padding: 7px;
     height: 80%;
     width: 80%;
