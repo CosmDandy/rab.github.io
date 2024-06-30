@@ -14,6 +14,19 @@ html, body, a, p {
     max-width: 700px;
 }
 
+a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: rgba(255, 255, 255, 0.65);
+}
+
+a:hover, a:active {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+p, button {
+    color: white;
+}
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -86,7 +99,9 @@ button {
     height: 3.5em;
     background-color: #4c4c4c;
     border-radius: 2em;
-    text-align: center;
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    justify-content: center;
 }
 
 .task_date p {
@@ -108,9 +123,9 @@ button {
 }
 
 .job-details {
-    width: 100%;
-    height: 60%;
-    background-color: aqua;
+    width: 90%;
+    height: 55%;
+    /*background-color: #737373;*/
     border-radius: 1em;
     display: flex;
     flex-direction: column;
@@ -119,11 +134,58 @@ button {
     align-items: flex-start;
 }
 
+.salary {
+    font-size: 3em;
+}
+
+.hourly-rate {
+    font-size: 1.3em;
+}
+
+.job-description {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-description p {
+    font-size: 1.5em;
+    padding-bottom: 15px;
+}
+
+.job-description svg {
+    width: 50px;
+    margin: 0 20px 0 0;
+    fill: #F66A1C;
+}
+
+.location {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location p {
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.location svg {
+    width: 30px;
+    margin: 0 20px 0 0;
+    fill: #F66A1C;
+}
+
 .go-button {
     width: 100%;
     height: 15%;
     background-color: #F66A1C;
     border-radius: 2em;
+    font-size: 2.5em;
 }
 
 .navigation {
