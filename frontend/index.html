@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Job Listing</title>
     <link rel="stylesheet" href="style/styles.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
@@ -36,6 +35,13 @@
 </head>
 <body>
 <div class="container">
+    <div class="modal-background" id="modalBackground">
+        <div class="modal-content">
+            <h2>Модальное окно</h2>
+            <p>Здесь может быть ваш контент модального окна.</p>
+            <button onclick="closeModal()">Закрыть</button>
+        </div>
+    </div>
     <div class="job-info">
         <div class="header">
             <div class="task_date_type">
@@ -66,7 +72,7 @@
                 </svg>
                 <div style="width: 85%">
                     <p>Работа с бензопилой, пилить кусты ветки</p>
-                    <a href="#" class="details-link">Посмотреть подробности</a>
+                    <a href="#" class="details-link" id="details-link">Посмотреть подробности</a>
                 </div>
             </div>
             <div class="location">
@@ -121,7 +127,7 @@
         </div>
     </div>
 </div>
-<!--<script src="https://telegram.org/js/telegram-web-app.js"></script>-->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="script/app.js"></script>
 </body>
 </html>

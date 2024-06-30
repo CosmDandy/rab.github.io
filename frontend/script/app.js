@@ -87,3 +87,20 @@ document.getElementById("urgent-switch-button").addEventListener("click", functi
         tg.sendData({urgent_switch_data: urgent_switch});
     }
 });
+
+
+// Функция для открытия модального окна
+function openModal() {
+    document.getElementById('modalBackground').style.display = 'flex'; // Показываем фон модального окна
+}
+
+// Функция для закрытия модального окна
+function closeModal() {
+    document.getElementById('modalBackground').style.display = 'none'; // Скрываем фон модального окна
+}
+
+// Назначаем обработчик события на ссылку
+document.getElementById('details-link').addEventListener('click', function (event) {
+    event.preventDefault(); // Предотвращаем переход по ссылке
+    openModal(); // Вызываем функцию открытия модального окна
+});

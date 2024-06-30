@@ -47,6 +47,32 @@ button {
     cursor: pointer; /* Добавляем указатель */
 }
 
+.modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    z-index: 1000; /* Выше всех остальных элементов */
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease; /* Плавный переход для всех свойств за 0.3 секунды с эффектом ease (по умолчанию) */
+}
+
+/* Стили для модального контейнера */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 80%; /* Максимальная ширина контента */
+    max-height: 80%; /* Максимальная высота контента */
+    overflow-y: auto; /* Добавляем полосу прокрутки, если контент не помещается */
+    transition: opacity 0.3s ease; /* Плавный переход для всех свойств за 0.3 секунды с эффектом ease (по умолчанию) */
+
+}
 
 .container {
     width: 90%;
@@ -211,11 +237,18 @@ button {
 .nav-button svg {
     position: absolute;
     top: 0;
-    left: 0;
-    padding: 10px 0 10px 0;
+    padding: 6px 0;
     height: 90%;
     width: 100%;
     fill: #F66A1C;
+}
+
+.left svg {
+    right: 0;
+}
+
+.right svg {
+    left: 0;
 }
 
 .filters {
