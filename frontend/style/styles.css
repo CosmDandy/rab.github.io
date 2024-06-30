@@ -234,13 +234,6 @@ button {
     margin: 0.5em;
 }
 
-.worker-count-data {
-    /*background-color: #427070;*/
-    height: 4em;
-    width: 4em;
-    margin: 0.5em;
-}
-
 .worker-count-button svg {
     height: 100%;
     width: 100%;
@@ -252,7 +245,7 @@ button {
     position: sticky;
     color: white;
     font-size: 2.5em;
-    margin: 15px auto;
+    margin: 10px auto;
     z-index: 2;
     text-align: center;
 }
@@ -262,8 +255,9 @@ button {
     width: 4em;
     border-radius: 50%;
     position: relative;
-    margin: 0.5em;
-    box-sizing: border-box;
+    margin: 6px;
+    border: 4px solid;
+    color: #F66A1C;
 }
 
 .urgent-switch-button svg {

@@ -47,11 +47,11 @@
                 </div>
             </div>
             <div>
-                <div class="worker-count-button worker-count-data">
+                <div class="worker-count-button">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                         <path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z"/>
                     </svg>
-                    <p>3</p>
+                    <p style="padding: 10px">3</p>
                 </div>
             </div>
         </div>
@@ -113,7 +113,7 @@
             </div>
             <button class="rate-button rb-right" id="rate-increase">+</button>
         </div>
-        <div class="urgent-switch-button" id="urgent-switch-button" style="border: 4px solid; color: #F66A1C">
+        <div class="urgent-switch-button" id="urgent-switch-button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z"/>
             </svg>
@@ -193,15 +193,11 @@
         const elementInput = document.getElementById('urgent-switch');
         if (parseInt(elementInput.value) === 0) {
             elementInput.value = 1;
-            element.style.color = "";
-            element.style.border = "";
             element.style.backgroundColor = "#F66A2A";
             urgent_switch = 1
             tg.sendData({urgent_switch_data: urgent_switch});
         } else {
             elementInput.value = 0;
-            element.style.color = "#F66A1C";
-            element.style.border = "4px solid";
             element.style.backgroundColor = "";
             urgent_switch = 0
             tg.sendData({urgent_switch_data: urgent_switch});
