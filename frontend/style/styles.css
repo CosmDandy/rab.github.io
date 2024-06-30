@@ -34,11 +34,6 @@ body {
     align-items: center;
     height: 100vh;
     width: 100%;
-    /*background-image: url("design/masters/123.png");*/
-    background-image: url("../../design/reference/test.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
 }
 
 button {
@@ -48,11 +43,22 @@ button {
     cursor: pointer; /* Добавляем указатель */
 }
 
+.wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("../../design/reference/test.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
 .container {
     width: 90%;
     height: 95%;
     border-radius: 1em;
-    margin: 1em 1em 2em;
+    margin: 0 auto;
     padding: 1em;
     display: flex;
     flex-direction: column;
