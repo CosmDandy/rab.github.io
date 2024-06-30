@@ -34,10 +34,7 @@ document.getElementById("worker-count-button").addEventListener("click", functio
     countElementInput.value = countInput
     worker_count = countInput
     tg.sendData({worker_count_data: worker_count});
-});
-
-document.getElementById("worker-count-button").addEventListener("click", function () {
-    window.navigator.vibrate(100);
+    tg.HapticFeedback.impactOccurred('medium')
 });
 
 document.getElementById("rate-decrease").addEventListener("click", function () {
