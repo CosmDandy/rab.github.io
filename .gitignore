@@ -677,3 +677,4 @@ cython_debug/
 design/
 database/data
 docker-compose.yml
+!/frontend/img/test.png
