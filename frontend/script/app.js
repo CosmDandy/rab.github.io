@@ -69,7 +69,8 @@ document.getElementById("rate-increase").addEventListener("click", function () {
     amountElementText.textContent = amountText + '₽';
     amountElementInput.value = amountInput
     rate_amount = amountInput
-    tg.sendData({rate_amount_data: rate_amount});
+    tg.sendData(String(rate_amount));
+    // tg.sendData(/**/"1");
 });
 
 document.getElementById("urgent-switch-button").addEventListener("click", function () {
