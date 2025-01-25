@@ -1,11 +1,11 @@
 import logging
 
-from aiogram import Router
+from aiogram import Router, F
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 
 from ..database.database_connection import client
-from ..keyboards.keyboards import open_stock_inline_kb, user_init_roles_inline_kb, user_switch_roles_inline_kb
+from ..keyboards.keyboards import open_stock_inline_kb, user_init_roles_inline_kb, user_switch_roles_inline_kb, keyboard
 
 router = Router(name=__name__)
 
@@ -37,3 +37,20 @@ async def switch_role_handler(message: Message) -> None:
 async def new_task(message: Message) -> None:
     # TODO document why this method is empty
     pass
+
+
+@router.message(Command('test'))
+async def switch_role_handler(message: Message) -> None:
+    """
+    Тут должна быть команда которая отправляет сообщение с кнопками для выбора роли и после меняет роль пользователя
+    :param message:
+    :return:
+    """
+    await message.answer('Выберите роль:', reply_markup=keyboard)
+
+
+@router.message(F.web_app_data)
+async def web_app_data(message):
+    # Получаем данные из Web App
+    print(message.web_app_data.data)
+    logging.info(message.web_app_data.data)

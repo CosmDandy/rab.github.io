@@ -11,16 +11,45 @@ let worker_count = ''
 let rate_amount = ''
 let urgent_switch = ''
 
+const { ClickHouse } = require('@clickhouse/client');
+
+async function executeQuery(query, host = 'http://localhost', port = 8123, user = 'default', password = '', database = 'default') {
+    const client = new ClickHouse({
+        url: host,
+        port: port,
+        username: user,
+        password: password,
+        database: database,
+    });
+
+    try {
+        const response = await client.query(query).toPromise();
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error(`Ошибка выполнения запроса: ${error.message}`);
+        return null;
+    }
+}
+
+// Пример использования функции
+(async () => {
+    const query = 'SELECT * FROM my_table LIMIT 10';
+    const result = await executeQuery(query, 'http://my_clickhouse_server', 8123, 'my_user', 'my_password', 'my_database');
+    console.log(result);
+})();
+
+
 document.getElementById("go-button").addEventListener("click", function () {
-    tg.sendData({go_button: "True"});
+//     TODO: Написать обращение к функции которая будет делать нормальный запрос к бд
 });
 
 document.getElementById("nav-button-left").addEventListener("click", function () {
-    tg.sendData({previous: "True"});
+//     TODO: Написать обращение к функции которая будет делать нормальный запрос к бд
 });
 
 document.getElementById("nav-button-right").addEventListener("click", function () {
-    tg.sendData({next: "True"});
+//     TODO: Написать обращение к функции которая будет делать нормальный запрос к бд
 });
 
 document.getElementById("worker-count-button").addEventListener("click", function () {
@@ -33,8 +62,8 @@ document.getElementById("worker-count-button").addEventListener("click", functio
     countElementText.textContent = countText;
     countElementInput.value = countInput
     worker_count = countInput
-    tg.sendData({worker_count_data: worker_count});
     tg.HapticFeedback.impactOccurred('medium')
+//     TODO: Написать обращение к функции которая будет делать нормальный запрос к бд
 });
 
 document.getElementById("rate-decrease").addEventListener("click", function () {
@@ -50,7 +79,7 @@ document.getElementById("rate-decrease").addEventListener("click", function () {
     amountElementText.textContent = amountText + '₽';
     amountElementInput.value = amountInput
     rate_amount = amountInput
-    tg.sendData({rate_amount_data: rate_amount});
+//     TODO: Написать обращение к функции которая будет делать нормальный запрос к бд
 });
 
 document.getElementById("rate-increase").addEventListener("click", function () {
@@ -66,8 +95,7 @@ document.getElementById("rate-increase").addEventListener("click", function () {
     amountElementText.textContent = amountText + '₽';
     amountElementInput.value = amountInput
     rate_amount = amountInput
-    tg.sendData(String(rate_amount));
-    // tg.sendData(/**/"1");
+//     TODO: Написать обращение к функции которая будет делать нормальный запрос к бд
 });
 
 document.getElementById("urgent-switch-button").addEventListener("click", function () {
@@ -77,12 +105,12 @@ document.getElementById("urgent-switch-button").addEventListener("click", functi
         elementInput.value = 1;
         element.style.backgroundColor = "#F66A2A";
         urgent_switch = 1
-        tg.sendData({urgent_switch_data: urgent_switch});
+//     TODO: Написать обращение к функции которая будет делать нормальный запрос к бд
     } else {
         elementInput.value = 0;
         element.style.backgroundColor = "";
         urgent_switch = 0
-        tg.sendData({urgent_switch_data: urgent_switch});
+//     TODO: Написать обращение к функции которая будет делать нормальный запрос к бд
     }
 });
 

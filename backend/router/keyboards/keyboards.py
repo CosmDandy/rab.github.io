@@ -1,4 +1,4 @@
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo, ReplyKeyboardMarkup, KeyboardButton
 
 user_init_roles_data = ['user_init_roles_1', 'user_init_roles_0']
 user_init_roles_inline_kb = InlineKeyboardMarkup(
@@ -29,8 +29,15 @@ open_stock_inline_kb = InlineKeyboardMarkup(
                 url='https://cosmdandy.github.io/rab.github.io/frontend/index.html'))
         ],
         [
-            InlineKeyboardButton(text='Подписаться на канал', url='https://t.me/go_4work')
+            InlineKeyboardButton(text='Подписаться на канал',
+                                 url='https://t.me/go_4work')
         ]
     ],
     resize_keyboard=True
 )
+
+web_app = WebAppInfo(url='https://cosmdandy.github.io/rab.github.io/frontend/index.html')
+
+keyboard = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text="Site", web_app=web_app)]
+])
